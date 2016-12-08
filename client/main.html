@@ -1,0 +1,22 @@
+<head>
+  <title>loic</title>
+</head>
+
+<body>
+  <h1>Chat</h1>
+  <hr>
+  {{> loginButtons}}
+  <hr>
+  {{#if currentUser}}
+  <form>
+      <input type="text" name="msg" placeholder="Tape ton mess">
+  </form>
+  {{/if}}
+  <ul>{{> msg}}</ul>
+</body>
+
+<template name="msg">
+    {{#each messages}}
+        <li><strong>{{user}}:</strong> {{body}}</li>
+    {{/each}}
+</template>
